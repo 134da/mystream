@@ -15,19 +15,7 @@ public class StreamDemo1 {
         list1.add("张强");
         list1.add("张三丰");
 
-        list1.stream().filter(new Predicate<String>() {
-            @Override
-            public boolean test(String s) {
-
-
-                return s.startsWith("张");
-            }
-        }).forEach(new Consumer<String>() {
-            @Override
-            public void accept(String s) {
-                System.out.println(s);
-            }
-        });
+        list1.stream().filter(name ->  name.startsWith("张")).filter(name -> name.length() == 3).forEach(s -> System.out.println(s));
 
 
     }
